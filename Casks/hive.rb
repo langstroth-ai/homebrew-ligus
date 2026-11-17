@@ -6,6 +6,8 @@ cask "hive" do
   url "https://github.com/honeyhive-ai/hive/releases/download/v#{version}/Hive_#{version}_aarch64.dmg",
       verified: "github.com/honeyhive-ai/hive/"
   name "Hive"
+
+  disable! date: "2026-11-17", because: "Hive is discontinued; its successor is Ligus: https://langstroth.ai/ligus"
   desc "Shared LLM workspace for developers — bring your own runtime"
   homepage "https://github.com/honeyhive-ai/hive"
 

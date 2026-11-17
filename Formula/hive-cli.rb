@@ -4,6 +4,8 @@ class HiveCli < Formula
   version "1.18.0"
   license "MIT"
 
+  disable! date: "2026-11-17", because: "Hive is discontinued; its successor is Ligus: https://langstroth.ai/ligus"
+
   on_macos do
     on_arm do
       url "https://github.com/honeyhive-ai/hive/releases/download/v1.18.0/hive-aarch64-apple-darwin"
