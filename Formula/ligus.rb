@@ -1,5 +1,5 @@
 class Ligus < Formula
-  desc "Headless Ligus client and agent daemon (formerly hive-cli)"
+  desc "Headless Ligus client and agent daemon"
   homepage "https://github.com/langstroth-ai/ligus"
   # TODO(release): placeholder until Ligus v0.1.0 is published. The release
   # workflow rewrites the URLs and replaces every sha256 below.

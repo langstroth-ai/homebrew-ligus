@@ -7,7 +7,7 @@ cask "ligus-app" do
 
   url "https://github.com/langstroth-ai/ligus/releases/download/v#{version}/Ligus_#{version}_aarch64.dmg"
   name "Ligus"
-  desc "Shared LLM workspace for developers (formerly Hive)"
+  desc "Shared LLM workspace for developers"
   homepage "https://github.com/langstroth-ai/ligus"
 
   livecheck do
@@ -20,17 +20,11 @@ cask "ligus-app" do
 
   app "Ligus.app"
 
-  # Remove user data on `brew uninstall --zap ligus-app`. Lists the pre-rename
-  # identifier too: Ligus copies com.hive.desktop on first launch and never
-  # deletes it, so a zap must clear both.
+  # Remove Ligus's own data on `brew uninstall --zap ligus-app`.
   zap trash: [
     "~/Library/Application Support/ai.ligus.desktop",
-    "~/Library/Application Support/com.hive.desktop",
     "~/Library/Caches/ai.ligus.desktop",
-    "~/Library/Caches/com.hive.desktop",
     "~/Library/Preferences/ai.ligus.desktop.plist",
-    "~/Library/Preferences/com.hive.desktop.plist",
     "~/Library/Saved Application State/ai.ligus.desktop.savedState",
-    "~/Library/Saved Application State/com.hive.desktop.savedState",
   ]
 end
