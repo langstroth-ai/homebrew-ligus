@@ -1,37 +1,65 @@
-# homebrew-hive: the Langstroth tap
+# homebrew-ligus
 
-Homebrew tap of [Langstroth](https://github.com/langstroth-ai), the
-organisation behind [Ligus](https://ligus.ai)
-([source](https://github.com/langstroth-ai/ligus), [docs](https://docs.langstroth.ai)).
-Langstroth is named after the Langstroth frame hive; Ligus is short for
-*ligustica* (*Apis mellifera ligustica*, the Italian honeybee). The repository
-is `homebrew-hive`, so the tap is `langstroth-ai/hive`.
+The [Homebrew](https://brew.sh) tap for [Ligus](https://langstroth.ai), the
+client apps of the [Langstroth](https://github.com/langstroth-ai) platform.
+Ligus is short for *ligustica*, the Italian honeybee.
 
-```bash
-brew install langstroth-ai/hive/ligus                 # CLI: ligus
-brew install --cask langstroth-ai/hive/ligus-app      # desktop app (Apple Silicon)
-```
+Tap: `langstroth-ai/ligus`
 
-Upgrade with `brew upgrade ligus` / `brew upgrade --cask ligus-app`. The cask is
-**Apple-Silicon-only** and the DMGs are signed and notarized, so it opens
-normally. The formula is called `ligus` and the cask `ligus-app` so that
-`brew install langstroth-ai/hive/ligus` is never ambiguous.
-
-Homebrew trusts third-party taps explicitly. If `brew` refuses to load a
-formula or cask from this tap, trust it once:
+## Install
 
 ```bash
-brew trust langstroth-ai/hive
+brew install --cask langstroth-ai/ligus/ligus-app   # desktop app: Ligus.app
+brew install langstroth-ai/ligus/ligus              # CLI and agent daemon: ligus
 ```
+
+| Name | Kind | Installs | Platforms |
+| --- | --- | --- | --- |
+| `ligus-app` | cask | `Ligus.app` into `/Applications` | macOS, Apple Silicon only |
+| `ligus` | formula | the `ligus` binary | macOS and Linux, arm64 and x86_64 |
+
+The cask is called `ligus-app` so it never collides with the `ligus` formula.
+Both download from the
+[langstroth-ai/ligus releases](https://github.com/langstroth-ai/ligus/releases).
+
+Homebrew may ask you to trust a third-party tap before it loads anything from
+it; see the [Homebrew install guide](https://docs.langstroth.ai/ligus/getting-started/homebrew/).
+
+## Upgrade
+
+```bash
+brew upgrade --cask ligus-app
+brew upgrade ligus
+```
+
+## Uninstall
+
+```bash
+brew uninstall --cask ligus-app          # remove the app
+brew uninstall --zap --cask ligus-app    # also remove Ligus's local data (ai.ligus.desktop)
+brew uninstall ligus
+```
+
+## Docs
+
+- Install with Homebrew: <https://docs.langstroth.ai/ligus/getting-started/homebrew/>
+- Using Ligus: <https://docs.langstroth.ai/ligus/>
+- Site: <https://langstroth.ai>
 
 ## Maintenance
 
-The canonical cask is edited in the main repo at
-[`deploy/homebrew/Casks/ligus-app.rb`](https://github.com/langstroth-ai/ligus/blob/main/deploy/homebrew/Casks/ligus-app.rb);
-each Ligus release updates `Formula/ligus.rb` and `Casks/ligus-app.rb` here
-(version, URLs and sha256) automatically. Until the first release (v0.1.0) both
-carry placeholder sha256 values marked `TODO(release)`.
+Each Ligus release updates `Formula/ligus.rb` and `Casks/ligus-app.rb` here
+(version, URLs and sha256). The canonical cask lives in the main repo at
+[`deploy/homebrew/Casks/ligus-app.rb`](https://github.com/langstroth-ai/ligus/blob/main/deploy/homebrew/Casks/ligus-app.rb).
 
-The disabled `hive-cli` formula and `hive` cask are kept on purpose: `brew
-info` and `brew upgrade` on either point at Ligus. There are no
-`formula_renames.json`, `cask_renames.json` or `tap_migrations.json` files.
+## Problems and security
+
+- Install problems with this tap: open an issue here.
+- Questions and bugs in Ligus itself: [issues](https://github.com/langstroth-ai/ligus/issues)
+  and [discussions](https://github.com/langstroth-ai/ligus/discussions) in the main repo.
+- Security vulnerabilities: do not open a public issue; follow the
+  [security policy](https://github.com/langstroth-ai/ligus/blob/main/SECURITY.md).
+
+## Licence
+
+Ligus is MIT licensed (see the main repo).
