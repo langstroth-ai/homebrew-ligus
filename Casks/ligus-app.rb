@@ -3,7 +3,7 @@ cask "ligus-app" do
   # TODO(release): placeholder until Ligus v0.1.0 is published. The
   # update-cask workflow rewrites version and replaces the sha256.
   version "0.1.0"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000" # TODO(release)
+  sha256 "66d50d0298e1ae897aa006e81bed6953fc1ca88e8af71a1c56ba168b445c47e7" # TODO(release)
 
   url "https://github.com/langstroth-ai/ligus/releases/download/v#{version}/Ligus_#{version}_aarch64.dmg"
   name "Ligus"
