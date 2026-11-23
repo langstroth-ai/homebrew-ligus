@@ -1,28 +1,28 @@
 class Lt < Formula
   desc "Full Ligus client in the terminal (Ligus is short for ligustica)"
   homepage "https://github.com/langstroth-ai/ligus-term"
-  version "0.1.3"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.1.3/lt-aarch64-apple-darwin"
-      sha256 "790ecf137e1a682de9f39df90e77c3ad0addd892aa18d4fb2241e3d6fb15c37b"
+      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.2.0/lt-aarch64-apple-darwin"
+      sha256 "560ac36eb8e156094f9d534ca6c71c0e649232a827f564505c1381c0f902159d"
     end
     on_intel do
-      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.1.3/lt-x86_64-apple-darwin"
-      sha256 "a9ee63dc62c4a279bff88193f2fcb6517c0b73eb159b9629bbd5f785488937b3"
+      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.2.0/lt-x86_64-apple-darwin"
+      sha256 "42f408926cd4195daac8577726f5b51cbdf884c9d4016211e010cfba4e642589"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.1.3/lt-aarch64-unknown-linux-musl"
-      sha256 "77f1b8e38f83a1610ac17a57f9092feaa4815654080f9a77f2465482a4363dd5"
+      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.2.0/lt-aarch64-unknown-linux-musl"
+      sha256 "8ffb5fc29622ab65408bc94e18f3a4bac1d5f7faad146b9df5c59b0d2ab48762"
     end
     on_intel do
-      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.1.3/lt-x86_64-unknown-linux-musl"
-      sha256 "edef0311a3db040440be6a18ef03f9c23c2cdd4bf74e7610c4447bf1bd7831be"
+      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.2.0/lt-x86_64-unknown-linux-musl"
+      sha256 "4f9f9423c98748da05fe8ba82d28a7e1e1b4ef7b3fee48de7154786a59af47ee"
     end
   end
 
@@ -30,6 +30,9 @@ class Lt < Formula
 
   def install
     bin.install Dir["lt-*"].first => "lt"
+    # lt prints its completions and man page without a device.
+    generate_completions_from_executable(bin/"lt", "completions", shells: [:bash, :zsh, :fish])
+    (man1/"lt.1").write Utils.safe_popen_read(bin/"lt", "man")
   end
 
   def caveats
