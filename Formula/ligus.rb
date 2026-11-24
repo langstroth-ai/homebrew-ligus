@@ -5,23 +5,23 @@ class Ligus < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/langstroth-ai/ligus/releases/download/v0.1.1/ligus-aarch64-apple-darwin"
-      sha256 "245881aaecd17364a0ad1644d67f6392e7a805588e1322783c8561a8eecaba3a"
+      url "https://github.com/langstroth-ai/ligus/releases/download/v0.2.0/ligus-aarch64-apple-darwin"
+      sha256 "8a2f271b5fd9a1bd85e9a93b92ea88a23c881c71040e3ac4168f64fc079f3c85"
     end
     on_intel do
-      url "https://github.com/langstroth-ai/ligus/releases/download/v0.1.1/ligus-x86_64-apple-darwin"
-      sha256 "cae9a1c2c7c354ba908047192b54f381a470cc6e229bb29b1d2cd2eb133466a5"
+      url "https://github.com/langstroth-ai/ligus/releases/download/v0.2.0/ligus-x86_64-apple-darwin"
+      sha256 "59518949b5583ec846ff712c07c9447db0a7f15aa779b217de5a5da7b22e82b3"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/langstroth-ai/ligus/releases/download/v0.1.1/ligus-aarch64-unknown-linux-musl"
-      sha256 "b36900d3268414f0be9472170279d52ae8c389f7fa4a22b42912976e177f9aaf"
+      url "https://github.com/langstroth-ai/ligus/releases/download/v0.2.0/ligus-aarch64-unknown-linux-musl"
+      sha256 "d22962deabbf45977716d5a3481f04ee74d0d0e6442b1487144b9f72dedcb404"
     end
     on_intel do
-      url "https://github.com/langstroth-ai/ligus/releases/download/v0.1.1/ligus-x86_64-unknown-linux-musl"
-      sha256 "cfbe099d122bea0e8093d83c25ba9ef60970ca66994915f259534a03f3310b47"
+      url "https://github.com/langstroth-ai/ligus/releases/download/v0.2.0/ligus-x86_64-unknown-linux-musl"
+      sha256 "606e91fcf3c0748dfbedf1ac3156db4bc9701b532dd19172ea51dda316784e0e"
     end
   end
 
