@@ -1,28 +1,28 @@
 class Lt < Formula
   desc "Full Ligus client in the terminal (Ligus is short for ligustica)"
   homepage "https://github.com/langstroth-ai/ligus-term"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.2.0/lt-aarch64-apple-darwin"
-      sha256 "560ac36eb8e156094f9d534ca6c71c0e649232a827f564505c1381c0f902159d"
+      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.2.1/lt-aarch64-apple-darwin"
+      sha256 "ded3a9f0e52070f9a04b2d0f34ab8c15a93e2cfb4c47ebb906c8da91f37cac67"
     end
     on_intel do
-      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.2.0/lt-x86_64-apple-darwin"
-      sha256 "42f408926cd4195daac8577726f5b51cbdf884c9d4016211e010cfba4e642589"
+      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.2.1/lt-x86_64-apple-darwin"
+      sha256 "ed6511ea205bb194772566a29b17887d0a0345ba94c5c8b68d15fec10fb5e4e5"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.2.0/lt-aarch64-unknown-linux-musl"
-      sha256 "8ffb5fc29622ab65408bc94e18f3a4bac1d5f7faad146b9df5c59b0d2ab48762"
+      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.2.1/lt-aarch64-unknown-linux-musl"
+      sha256 "583d18f58c4a32fcba506ba6942f3ccafc1cde6223a229b5528e3243532fa41b"
     end
     on_intel do
-      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.2.0/lt-x86_64-unknown-linux-musl"
-      sha256 "4f9f9423c98748da05fe8ba82d28a7e1e1b4ef7b3fee48de7154786a59af47ee"
+      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.2.1/lt-x86_64-unknown-linux-musl"
+      sha256 "3cd46cf673c99826819816a8a9f0c288b023587c3548d25d24e7236c75931c8d"
     end
   end
 
@@ -30,8 +30,8 @@ class Lt < Formula
 
   def install
     bin.install Dir["lt-*"].first => "lt"
-    # The release asset downloads without the execute bit, and Homebrew only
-    # fixes modes after install, so make lt runnable before calling it below.
+    # The asset downloads without the execute bit, and Homebrew only
+    # fixes modes after install: make lt runnable before calling it.
     chmod 0755, bin/"lt"
     # lt prints its completions and man page without a device.
     generate_completions_from_executable(bin/"lt", "completions", shells: [:bash, :zsh, :fish])
