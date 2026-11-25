@@ -1,28 +1,28 @@
 class Lt < Formula
   desc "Full Ligus client in the terminal (Ligus is short for ligustica)"
   homepage "https://github.com/langstroth-ai/ligus-term"
-  version "0.2.1"
+  version "0.3.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.2.1/lt-aarch64-apple-darwin"
-      sha256 "ded3a9f0e52070f9a04b2d0f34ab8c15a93e2cfb4c47ebb906c8da91f37cac67"
+      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.3.0/lt-aarch64-apple-darwin"
+      sha256 "bd5ca3fae4da62172b4698b689e7d20db7436faff7430466c2da5dd956604aca"
     end
     on_intel do
-      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.2.1/lt-x86_64-apple-darwin"
-      sha256 "ed6511ea205bb194772566a29b17887d0a0345ba94c5c8b68d15fec10fb5e4e5"
+      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.3.0/lt-x86_64-apple-darwin"
+      sha256 "521b86107fac08f9887296c4c55a26ff5868bbb04b7a8292fe232824d7c0c56a"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.2.1/lt-aarch64-unknown-linux-musl"
-      sha256 "583d18f58c4a32fcba506ba6942f3ccafc1cde6223a229b5528e3243532fa41b"
+      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.3.0/lt-aarch64-unknown-linux-musl"
+      sha256 "58c9ffb8d57dba994f24968a32ff707e5e040a929ae622aec6e7d7ebc7345bc6"
     end
     on_intel do
-      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.2.1/lt-x86_64-unknown-linux-musl"
-      sha256 "3cd46cf673c99826819816a8a9f0c288b023587c3548d25d24e7236c75931c8d"
+      url "https://github.com/langstroth-ai/ligus-term/releases/download/v0.3.0/lt-x86_64-unknown-linux-musl"
+      sha256 "bc94deaa382e523299d912a18230c2a2c83af14304ed64619c86ea6f8f1ab7f2"
     end
   end
 
