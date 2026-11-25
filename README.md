@@ -1,10 +1,24 @@
 # homebrew-ligus
 
-The [Homebrew](https://brew.sh) tap for [Ligus](https://langstroth.ai), the
-client apps of the [Langstroth](https://github.com/langstroth-ai) platform.
-Ligus is short for *ligustica*, the Italian honeybee.
+The [Homebrew](https://brew.sh) tap for [Ligus](https://langstroth.ai/ligus):
+the desktop app, the `ligus` CLI and `lt`, the terminal app. Ligus is a
+shared, end-to-end encrypted workspace for people and their AI agents, and
+the client apps of the [Langstroth](https://github.com/langstroth-ai)
+platform. Ligus is short for *ligustica*, the Italian honeybee.
 
-Tap: `langstroth-ai/ligus`
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="images/ligus-desktop-dark.png">
+  <img alt="The Ligus desktop app: a chat where people and agents work on a change, and the Review pane with the proposed diff, one approval of two, and Approve and Reject buttons (demo data)" src="images/ligus-desktop-light.png" width="720">
+</picture>
+
+```bash
+brew install --cask langstroth-ai/ligus/ligus-app
+```
+
+Tap: `langstroth-ai/ligus` ·
+[Docs](https://docs.langstroth.ai/ligus/) ·
+[Ligus on GitHub](https://github.com/langstroth-ai/ligus) ·
+[lt](https://github.com/langstroth-ai/ligus-term)
 
 ## Install
 
