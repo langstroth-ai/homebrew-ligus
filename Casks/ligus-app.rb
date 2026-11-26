@@ -2,8 +2,8 @@ cask "ligus-app" do
   # Apple Silicon only: the desktop app ships an aarch64 DMG (no Intel build).
   # TODO(release): placeholder until Ligus v0.1.0 is published. The
   # update-cask workflow rewrites version and replaces the sha256.
-  version "0.3.1"
-  sha256 "5cde76f95558f9f0bccf4d5154ef091829e6f5bab467d2e1b5e8614fa15ce5fd" # TODO(release)
+  version "0.4.0"
+  sha256 "9ff7b964d42a1adfa14149c7a31b0a411723c07f8e814f7e379299c5bed3d255" # TODO(release)
 
   url "https://github.com/langstroth-ai/ligus/releases/download/v#{version}/Ligus_#{version}_aarch64.dmg"
   name "Ligus"
